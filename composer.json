@@ -1,0 +1,26 @@
+{
+    "name": "vertx-one/symfony-raiffeisen-ecom-client",
+    "type": "library",
+    "description": "Symfony Client for raiffeissen.ru eComApi. https://e-commerce.raiffeisen.ru/api/doc/ecom.html",
+    "homepage": "https://github.com/vertx-one/symfony-raiffeisen-ecom-client",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rinat Khalekov",
+            "email": "rh@ristudio.ru"
+        }
+    ],
+    "require": {
+        "php": ">=7.2",
+        "symfony/http-client": "^4.2|^5.0",
+        "symfony/serializer": ">=4.2"
+    },
+    "autoload": {
+        "psr-4": { "VertxOne\\Symfony\\RaiffeisenRu\\Ecom\\": "src" },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
+    },
+    "version": "1.0",
+    "minimum-stability": "dev"
+}
