@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace VertxOne\Symfony\RaiffeisenRu\Ecom;
+namespace VertxOne\Symfony\RaiffeisenRu\Ecom\Service;
 
 use VertxOne\Symfony\RaiffeisenRu\Ecom\Type\PaymentTransaction;
 

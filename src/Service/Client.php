@@ -1,20 +1,18 @@
 <?php
 declare(strict_types=1);
 
-namespace VertxOne\Symfony\RaiffeisenRu\Ecom;
+namespace VertxOne\Symfony\RaiffeisenRu\Ecom\Service;
 
 use Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface;
 use Symfony\Contracts\HttpClient\Exception\RedirectionExceptionInterface;
 use Symfony\Contracts\HttpClient\Exception\ServerExceptionInterface;
 use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
+use VertxOne\Symfony\RaiffeisenRu\Ecom\HostTrait;
 
 class Client
 {
     use HostTrait;
-
-    /** @var string */
-    private $publicId;
 
     /** @var string */
     private $secretKey;
@@ -26,12 +24,10 @@ class Client
     public function __construct(
         HttpClientInterface $httpClient,
         $isTestMode,
-        string $publicId,
         string $secretKey
     )
     {
         $this->isTestMode = $isTestMode;
-        $this->publicId = $publicId;
         $this->secretKey = $secretKey;
 
         $this->httpClient = $httpClient;
