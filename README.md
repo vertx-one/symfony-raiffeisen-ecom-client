@@ -1,7 +1,17 @@
-# symfony-smsru-notifier
+# symfony-raiffeisen-ecom-client
 Documentation: https://e-commerce.raiffeisen.ru/api/doc/ecom.html
 
-Клиент для 
+Клиент для raiffeisen.ru e-commerce API. 
+
+Позволяет:
+1. формировать ссылку на оплату
+2. проверять подпись полученного уведомления от банка
+3. получать информацию о платеже
+4. отправлять запросы на возврат и получение информации об статусе обработки запроса
+
+Дополненительно доступно использование сериализации в типизированные структуры с поддержкой валидации (см. папку Type)  
+
+## Использование
 
 Добавляем в .env
 ```ini
@@ -11,7 +21,7 @@ RAIFFEISEN_MERCHANT_ID="<id>"
 RAIFFEISEN_MERCHANT_KEY="<key>"
 ```
 
-Добавляем в конфиг
+Добавляем в config.yaml
 
 ```yaml
 parameters:
