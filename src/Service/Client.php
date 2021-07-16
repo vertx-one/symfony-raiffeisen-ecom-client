@@ -22,9 +22,9 @@ class Client
 
 
     public function __construct(
-        HttpClientInterface $httpClient,
         $isTestMode,
-        string $secretKey
+        string $secretKey,
+        HttpClientInterface $httpClient
     )
     {
         $this->isTestMode = $isTestMode;
