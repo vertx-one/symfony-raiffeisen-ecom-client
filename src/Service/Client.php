@@ -39,6 +39,29 @@ class Client
     }
 
     /**
+     * Установить урл для уведомлений
+     * @throws ClientExceptionInterface
+     * @throws RedirectionExceptionInterface
+     * @throws ServerExceptionInterface
+     * @throws TransportExceptionInterface
+     */
+    public function setCallback(string $callbackUrl): string
+    {
+
+        $url = $this->getHost() . '/api/settings/v1/callback';
+
+        $resp = $this->httpClient
+            ->request('POST', $url, [
+                'auth_bearer' => $this->secretKey,
+                'json' => [
+                    'callbackUrl' => $callbackUrl
+                ]
+            ]);
+
+        return $resp->getContent();
+    }
+
+    /**
      * Получить платежную транзакции по заказу
      * @param string $order_id
      * @return string json data
